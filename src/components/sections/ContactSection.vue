@@ -57,7 +57,7 @@ const contactLinks = [
     </div>
 
     <div class="relative py-8 text-center text-sm text-[var(--color-text)]/50">
-      <p>© {{ currentYear }} Maxime Gouillardon. Tous droits réservés.</p>
+      <p>© {{ currentYear }} Jérémy Stephan. Tous droits réservés.</p>
     </div>
   </footer>
 </template>
