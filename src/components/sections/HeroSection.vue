@@ -26,7 +26,7 @@ const techByCategory = computed(() => {
             <h1
               class="animate-fade-in-up text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight"
             >
-              Maxime Gouillardon
+              Jeremy Stephan
             </h1>
             <p
               class="animate-fade-in-up text-[var(--color-accent)] font-mono text-lg sm:text-xl delay-100"
