@@ -31,7 +31,7 @@ const techByCategory = computed(() => {
             <p
               class="animate-fade-in-up text-[var(--color-accent)] font-mono text-lg sm:text-xl delay-100"
             >
-              Administrateur Systèmes et Réseaux
+              Administrateur Systemes et Reseaux
             </p>
           </div>
 
