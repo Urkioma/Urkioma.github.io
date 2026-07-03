@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import HeroSection from "../components/sections/HeroSection.vue";
+import ProjectSection from "../components/sections/ProjectSection.vue";
+import SkillsSection from "../components/sections/SkillsSection.vue";
+import ContactSection from "../components/sections/ContactSection.vue";
+
+const projects = await getCollection("projects");
+
+const projectsData = projects
+  .map((project) => ({
+    slug: project.slug,
+    ...project.data,
+  }))
+  .sort((a, b) => a.order - b.order);
+---
+
+<Layout title="Maxime Gouillardon - Développeur Fullstack">
+  <main>
+    <HeroSection client:load />
+    <ProjectSection client:load projects={projectsData} />
+    <SkillsSection client:load />
+    <ContactSection client:load />
+  </main>
+</Layout>

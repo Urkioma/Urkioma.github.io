@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --font-body: "Inter", "sans-serif";
+  --font-mono: "JetBrains Mono", "monospace";
+
+  --color-background: #1e1e2e;
+  --color-lavender: #b4befe;
+  --color-rose: #f5c2e7;
+  --color-mint: #94e2d5;
+  --color-peach: #fab387;
+  --color-text: #cdd6f4;
+  --color-accent: #89b4fa;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}

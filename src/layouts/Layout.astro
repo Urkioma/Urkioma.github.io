@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../components/BaseLayout.vue';
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@700,500,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Bienvenue sur mon portfolio. Découvrez mes projets et compétences en développement web." />
+    <title>{title}</title>
+  </head>
+  <body>
+    <BaseLayout client:load>
+      <slot />
+    </BaseLayout>
+  </body>
+</html>
