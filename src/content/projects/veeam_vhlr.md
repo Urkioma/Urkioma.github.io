@@ -3,7 +3,7 @@ title: "Sauvegarde Resiliente : Veeam, VHLR & Bandes LTO"
 order: 2
 description: "Conception d'une infrastructure de sauvegarde hybride combinant un depot durci Linux (VHLR) pour l'immuabilite a chaud et un lecteur de bande pour l'archivage a froid deconnecte contre les ransomwares."
 shortDescription: "Securisation globale du parc et PRA via Veeam, VHLR et stockage LTO"
-preview: { type: "image", url: "/projects/veeam-vhlr-architecture.png" }
+preview: { type: "image", url: "/projects/vhlr.jpg" }
 color: "rose"
 tech:
   [
@@ -31,7 +31,7 @@ Face à l'évolution des cybermenaces ciblant spécifiquement les sauvegardes d'
 
 - **Lecteur de bande magnétique LTO** : Intégration et configuration d'une solution de stockage sur bande pour les sauvegardes à long terme (Cold Backup).
 - **Isolation physique (Air-Gap)** : Processus de rotation et d'exportation physique des bandes hors de la baie/du site, rendant les données mathématiquement intouchables par une cyberattaque réseau.
-- **Politique GFS (Grandfather-Father-Son)** : Configuration des plans de rétention Veeam pour automatiser l'archivage périodique (Hebdomadaire/Mensuel/Annuel) sur support bande.
+- **Politique GFS** : Configuration des plans de rétention Veeam pour automatiser l'archivage périodique (Hebdomadaire/Mensuel/Annuel) sur support bande.
 
 ### Validation & Plan de Reprise d'Activité (PRA)
 
