@@ -26,7 +26,7 @@ Dans le cadre d'une stratégie de gestion des risques liée à l'évolution des 
 - **Cluster de 3 nœuds physiques** configuré pour la résilience.
 - **Haute Disponibilité (HA)** native avec gestion fine du quorum.
 - **Cluster Resource Scheduler (CRS)** pour la répartition intelligente des ressources au démarrage et lors des basculements.
-- **Mécanisme de Fencing (STONITH)** matériel via cartes de management (iLO/iDRAC) pour éviter le split-brain.
+- **Gestion automatisée du split-brain** via les mécanismes de vote natifs du cluster corosync.
 
 ### Stockage Distribué (Ceph)
 
@@ -36,9 +36,10 @@ Dans le cadre d'une stratégie de gestion des risques liée à l'évolution des 
 
 ### Stratégie de Migration
 
-- **Proof of Concept (POC)** avec conversion et importation de machines virtuelles de production (fichiers `.vmdk` vers les volumes Ceph).
-- **Interopérabilité réseau** : Alignement des bridges Proxmox avec la matrice de VLANs Cisco existante.
-- **Optimisation des performances** : Configuration des agents invités (*QEMU Guest Agent*) pour assurer des sauvegardes à chaud cohérentes.
+- **Proof of Concept (POC)** de migration à l'aide de Veeam Backup & Replication.
+- **Restauration inter-plateformes** : Utilisation de la fonctionnalité Veeam *« Restore entire VM to Proxmox VE »* pour convertir et importer directement les sauvegardes ESXi vers les volumes de stockage Ceph.
+- **Interopérabilité réseau** : Alignement des bridges Proxmox avec la matrice de VLANs existante pour garantir la connectivité immédiate des VM après restauration.
+- **Optimisation des performances** : Configuration post-migration des agents invités (*QEMU Guest Agent*) pour assurer la cohérence des futures sauvegardes à chaud.
 
 ### Métriques & Validation
 
