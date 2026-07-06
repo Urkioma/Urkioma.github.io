@@ -3,7 +3,7 @@ title: "Migration d'Infrastructure Critique : De VMware ESXi vers Proxmox VE"
 order: 1
 description: "Architecture, déploiement et pilotage du Proof of Concept (POC) visant à migrer l'infrastructure virtuelle VMware ESXi vers un cluster hyperconvergé open-source résilient de 3 nœuds."
 shortDescription: "Migration d'infrastructure critique VMware ESXi vers Proxmox VE & Ceph"
-preview: { type: "image", url: "/projects/proxmox.png" }
+preview: { type: "image", url: "/projects/proxmox-logo.png" }
 color: "mint"
 tech:
   [
