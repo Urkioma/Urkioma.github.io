@@ -70,7 +70,7 @@ const { displayText: titleText } = useTextScramble(props.frontmatter.title);
     >
       <div class="max-w-7xl mx-auto px-6">
         <div
-          class="rounded-xl overflow-hidden border border-[var(--color-text)]/5"
+          class="rounded-xl overflow-hidden border border-[var(--color-text)]/5 flex justify-center"
         >
           <video
             v-if="frontmatter.preview?.type === 'video'"
@@ -81,16 +81,17 @@ const { displayText: titleText } = useTextScramble(props.frontmatter.title);
             muted
             playsinline
           />
+          <!-- Modifié ici pour dompter le schéma réseau -->
           <img
             v-else
             :src="frontmatter.preview?.url || frontmatter.image"
             :alt="frontmatter.title"
-            class="w-full object-cover"
+            class="w-full max-w-4xl h-auto max-h-[450px] object-contain bg-white p-4"
           />
         </div>
       </div>
     </div>
-
+    
     <div class="relative max-w-4xl mx-auto px-6 py-24">
       <div
         class="absolute inset-0 opacity-[0.02]"
