@@ -3,7 +3,7 @@ title: "Industrialisation & Deploiement de Masse : Ansible & Semaphore"
 order: 3
 description: "Automatisation complete du cycle de vie de 128 instances Windows de formation sur cluster Proxmox VE, orchestree via Ansible Semaphore et supervisee par Graylog."
 shortDescription: "Orchestration et industrialisation de 128 instances de formation via Ansible et Semaphore"
-preview: { type: "image", url: "/projects/proxmox_reseau.png" }
+preview: { type: "image", url: "/projects/ansible_bg.png" }
 color: "lavender"
 tech:
   [
