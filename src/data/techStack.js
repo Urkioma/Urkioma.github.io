@@ -31,7 +31,7 @@ export const techStack = [
     category: "infrastructure",
   },
   {
-    name: "Cisco (CCNA)",
+    name: "Docker",
     color: "mint",
     delay: "delay-600",
     category: "infrastructure",

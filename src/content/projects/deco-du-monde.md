@@ -1,82 +1,64 @@
 ---
-title: "Deco du Monde"
+title: "Cluster Proxmox VE & Ceph"
 order: 1
-description: "Application panel admin de gestion complète pour studio photo. Solution fullstack moderne combinant AdonisJS 6, Vue 3 et Inertia pour une expérience utilisateur fluide et réactive."
-shortDescription: "Gestion de studio photo avec AdonisJS 6, Vue 3 et Inertia"
-preview: { type: "video", url: "/projects/deco-du-monde.mov" }
+description: "Architecture, déploiement et pilotage du Proof of Concept (POC) visant à migrer l'infrastructure virtuelle VMware ESXi vers un cluster hyperconvergé open-source résilient de 3 nœuds."
+shortDescription: "Migration d'infrastructure critique VMware ESXi vers Proxmox VE & Ceph"
+preview: { type: "image", url: "/projects/proxmox-ceph-infra.png" }
 color: "mint"
 tech:
   [
-    { name: "Vue.js", color: "mint" },
-    { name: "AdonisJS", color: "lavender" },
-    { name: "InertiaJS", color: "rose" },
+    { name: "Proxmox VE", color: "lavender" },
+    { name: "Ceph Storage", color: "mint" },
+    { name: "VMware ESXi", color: "peach" },
   ]
-githubUrl: "https://github.com/MGouillardon/deco-du-monde"
+githubUrl: "https://github.com/jeremy-stephan/proxmox-migration-poc"
 featured: true
 ---
 
 ## Le Projet
 
-Application web fullstack moderne dédiée à la gestion d'un studio photo spécialisé en décoration d'intérieur. Le projet met l'accent sur l'efficacité opérationnelle et la qualité du code, avec une architecture robuste et une expérience utilisateur soignée.
+Dans le cadre d'une stratégie de gestion des risques liée à l'évolution des licences VMware (suite au rachat par Broadcom), ce projet consiste à concevoir et déployer une infrastructure alternative complète. L'objectif était de valider la faisabilité technique d'une migration totale d'un parc critique de 285 machines virtuelles vers une solution open-source de niveau entreprise, sans compromis sur la haute disponibilité.
 
 ## Architecture & Technologies
 
-### Backend (AdonisJS 6)
+### Hyperconvergence (Proxmox VE)
 
-- **Architecture MVC** avec controllers structurés
-- **ORM Lucid** pour une gestion efficace des données
-- **Système de policies** pour la gestion fine des autorisations
-- **Services dédiés** pour la logique métier
-- **Validation** avec VineJS
-- **Système d'events** pour la communication interne
+- **Cluster de 3 nœuds physiques** configuré pour la résilience.
+- **Haute Disponibilité (HA)** native avec gestion fine du quorum.
+- **Cluster Resource Scheduler (CRS)** pour la répartition intelligente des ressources au démarrage et lors des basculements.
+- **Mécanisme de Fencing (STONITH)** matériel via cartes de management (iLO/iDRAC) pour éviter le split-brain.
 
-### Frontend (Vue 3 + Inertia)
+### Stockage Distribué (Ceph)
 
-- **Composition API** pour une meilleure réutilisation du code
-- **Inertia.js** pour faire le lien entre backend et frontend
-- **DaisyUI** pour des composants UI cohérents
-- **TailwindCSS** pour le styling flexible
-- **Composables** pour la logique réutilisable
+- **Stockage partagé hyperconvergé** éliminant le besoin d'une baie de stockage (SAN) dédiée.
+- **Pools de réplication** configurés pour tolérer la perte simultanée d'un nœud et de plusieurs disques.
+- **Réseau de réplication dédié** isolé physiquement sur des liaisons 10 Gbps à faible latence.
 
-### Base de Données
+### Stratégie de Migration
 
-- **MySQL** avec relations optimisées
-- **Migrations** pour un versioning de la DB
-- **Seeds** pour les données de test
-- **Factory Pattern** pour les tests
+- **Proof of Concept (POC)** avec conversion et importation de machines virtuelles de production (fichiers `.vmdk` vers les volumes Ceph).
+- **Interopérabilité réseau** : Alignement des bridges Proxmox avec la matrice de VLANs Cisco existante.
+- **Optimisation des performances** : Configuration des agents invités (*QEMU Guest Agent*) pour assurer des sauvegardes à chaud cohérentes.
 
-### Qualité & Tests
+### Métriques & Validation
 
-- **Tests unitaires & fonctionel** avec Japa
-- **Tests E2E** avec Playwright
-- **CI** via GitHub Actions
-- **ESLint & Prettier** pour la qualité du code
+- **Stress-tests de charge** CPU/RAM et coupures physiques de nœuds pour valider la bascule automatique (HA).
+- **Benchmarks I/O** du stockage Ceph en lecture/écriture séquentielle et aléatoire.
+- **Modélisation du Plan de Reprise d'Activité (PRA)** avec calcul des métriques de temps de basculement.
 
 ## Fonctionnalités Clés
 
-### Gestion des Ressources
+### Haute Disponibilité & Résilience
 
-- Inventaire détaillé et tracking des éléments
-- Système de validation multi-étapes
-- Gestion des sets de décoration
-- Suivi en temps réel du matériel
+- Reprise automatique des VM en moins de 2 minutes en cas de crash d'un serveur physique.
+- Migration à chaud (*Live Migration*) des VM d'un nœud à un autre sans aucune coupure réseau ou de service pour la maintenance des hôtes.
 
-### Planning
+### Stockage Unifié & Évolutif
 
-- **Calendrier interactif** avec FullCalendar
-- Gestion des événements avec drag & drop
-- Assignation automatique des équipes
-- Validation des étapes par role
+- Agrégation de la capacité de stockage de tous les serveurs en un seul pool logique.
+- Ajout ou remplacement de disques à chaud sans interruption de l'infrastructure.
 
-### Tableau de Bord
+### Tableau de Bord & Supervision
 
-- Métriques clés en temps réel
-- Gestion des utilisateurs et roles
-- Widgets personnalisables
-- Vue d'ensemble des activités
-
-### Sécurité & Performance
-
-- **Authentication** complète
-- **Authorization** basée sur les roles
-- **Validation** côté serveur
+- Centralisation des métriques du cluster et du stockage Ceph sur l'interface graphique de Proxmox.
+- Alerting configuré pour notifier l'équipe d'administration en cas de dégradation de l'état d'un disque ou d'un nœud.
