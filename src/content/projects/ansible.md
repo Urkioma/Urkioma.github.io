@@ -21,7 +21,7 @@ Pour répondre aux besoins de formation des greffiers sur les applications judic
 
 ## Architecture & Technologies
 
-### Usine à Commutation Virtuelle & Automatisation (Ansible)
+### Commutation Virtuelle & Automatisation (Ansible)
 
 - **Cycle de vie automatisé** : Développement de playbooks Ansible permettant le provisionnement (clonage lié), la jonction au domaine Active Directory, la maintenance et le nettoyage complet des VM.
 - **Répartition intelligente de charge** : Algorithme Ansible dynamique distribuant cycliquement les 128 instances sur les 3 nœuds physiques du cluster pour équilibrer les ressources CPU/RAM.
