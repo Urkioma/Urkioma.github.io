@@ -1,15 +1,15 @@
 ---
-title: "Sauvegarde Résiliente : Veeam, VHLR & Bandes LTO"
+title: "Sauvegarde Resiliente : Veeam, VHLR & Bandes LTO"
 order: 2
-description: "Conception d'une infrastructure de sauvegarde hybride combinant un dépôt durci Linux (VHLR) pour l'immuabilité à chaud et un lecteur de bande pour l'archivage à froid déconnecté contre les ransomwares."
-shortDescription: "Sécurisation globale du parc et PRA via Veeam, VHLR et stockage LTO"
+description: "Conception d'une infrastructure de sauvegarde hybride combinant un depot durci Linux (VHLR) pour l'immuabilite a chaud et un lecteur de bande pour l'archivage a froid deconnecte contre les ransomwares."
+shortDescription: "Securisation globale du parc et PRA via Veeam, VHLR et stockage LTO"
 preview: { type: "image", url: "/projects/veeam-vhlr-architecture.png" }
 color: "rose"
 tech:
   [
     { name: "Veeam Backup", color: "mint" },
-    { name: "Linux (Debian/RHEL)", color: "lavender" },
-    { name: "Stockage LTO", color: "peach" },
+    { name: "Linux", color: "lavender" },
+    { name: "Stockage LTO", color: "mint" },
   ]
 githubUrl: "https://github.com/urkioma"
 featured: true
@@ -24,19 +24,19 @@ Face à l'évolution des cybermenaces ciblant spécifiquement les sauvegardes d'
 ### Immuabilité à Chaud (Veeam VHLR)
 
 - **Veeam Hardened Linux Repository (VHLR)** : Déploiement d'un dépôt de sauvegarde physique indépendant sous Linux durci (Debian/RHEL).
-- **Verrouillage des données** : Configuration des indicateurs d'immuabilité au niveau du système de fichiers (via `chattr`), interdisant toute modification ou suppression des points de restauration par un rançongiciel ou un administrateur corrompu.
-- **Sécurisation du système (Hardening)** : Désactivation du protocole SSH après initialisation, utilisation exclusive de comptes locaux non nominatifs à usage unique (*Single-Use Credentials*) et restrictions réseau strictes.
+- **Verrouillage des données** : Configuration des indicateurs d'immuabilité au niveau du système de fichiers (via chattr), interdisant toute modification ou suppression des points de restauration par un rançongiciel ou un administrateur corrompu.
+- **Sécurisation du système (Hardening)** : Désactivation du protocole SSH après initialisation, utilisation exclusive de comptes locaux non nominatifs à usage unique (Single-Use Credentials) et restrictions réseau strictes.
 
 ### Archivage à Froid & Air-Gap (Lecteur de Bande)
 
-- **Lecteur de bande magnétique LTO** : Intégration et configuration d'une solution de stockage sur bande pour les sauvegardes à long terme (*Cold Backup*).
+- **Lecteur de bande magnétique LTO** : Intégration et configuration d'une solution de stockage sur bande pour les sauvegardes à long terme (Cold Backup).
 - **Isolation physique (Air-Gap)** : Processus de rotation et d'exportation physique des bandes hors de la baie/du site, rendant les données mathématiquement intouchables par une cyberattaque réseau.
 - **Politique GFS (Grandfather-Father-Son)** : Configuration des plans de rétention Veeam pour automatiser l'archivage périodique (Hebdomadaire/Mensuel/Annuel) sur support bande.
 
 ### Validation & Plan de Reprise d'Activité (PRA)
 
 - **Garantie de restauration** : Planification et exécution de tests semestriels de restauration complète de l'infrastructure pour valider l'intégrité des données stockées.
-- **Calcul des métriques clés** : Mesure et optimisation du RTO (*Recovery Time Objective*) et du RPO (*Recovery Point Objective*) pour s'assurer de la conformité avec les exigences de continuité d'activité.
+- **Calcul des métriques clés** : Mesure et optimisation du RTO (Recovery Time Objective) et du RPO (Recovery Point Objective) pour s'assurer de la conformité avec les exigences de continuité d'activité.
 
 ## Fonctionnalités Clés
 
