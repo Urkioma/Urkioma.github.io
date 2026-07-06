@@ -27,7 +27,7 @@ Garantir la haute disponibilité et la sécurité d'un système d'information ex
 ### Supervision Proactive & Alerting (Centreon)
 
 - **Contrôle d'infrastructure global** : Surveillance continue de la santé des serveurs physiques (CPU, RAM, disques), de la disponibilité des hyperviseurs et de la réactivité des sites web et applications intranet.
-- **Surveillance environnementale** : Intégration de sondes de température SNMP au sein de la salle serveur pour prévenir les risques thermiques et les pannes matérielles critiques.
+- **Surveillance environnementale** : Intégration de sondes de température SNMP au sein des salles serveurs et des sous répartiteurs pour prévenir les risques thermiques et les pannes matérielles critiques.
 - **Notification multi-canal** : Configuration d'un moteur d'alerting dynamique assurant l'envoi de courriels et de SMS (via passerelle dédiée) en cas de franchissement de seuils critiques, garantissant une réactivité 24/7 des équipes d'astreinte.
 
 ### Gestion des Logs à Grande Échelle (Graylog)
