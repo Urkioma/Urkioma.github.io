@@ -27,7 +27,7 @@ Face à une dérive sécuritaire majeure sur un serveur de fichiers partagé mul
 La migration et la mise en conformité ont été orchestrées à travers un pipeline logique découpé en 5 étapes automatisées :
 
 ### Étape 1 : Audit de l'existant & Data Mining
-Extraction chirurgicale des listes de contrôle d'accès (ACL) actives sur l'ensemble de l'arborescence. Utilisation de filtres avancés pour ignorer les comptes systèmes immuables (`Système`, `Administrateurs`, `Créateur Propriétaire`) afin d'isoler uniquement les anomalies — droits nominatifs résiduels et groupes obsolètes — exportées dans un rapport d'audit au format CSV.
+Extraction des listes de contrôle d'accès (ACL) actives sur l'ensemble de l'arborescence. Utilisation de filtres avancés pour ignorer les comptes systèmes immuables (`Système`, `Administrateurs`, `Créateur Propriétaire`) afin d'isoler uniquement les anomalies — droits nominatifs résiduels et groupes obsolètes — exportées dans un rapport d'audit au format CSV.
 
 ### Étape 2 : Provisioning Automatique de l'AD
 Parsing automatisé du fichier de structure pour générer la nomenclature des nouveaux groupes de sécurité cibles dans l'Unité d'Organisation (OU) correspondante de l'Active Directory. Chaque dossier se voit attribuer une paire de groupes uniques dédiés : Lecture Seule (`-R`) et Modification (`-RW`).

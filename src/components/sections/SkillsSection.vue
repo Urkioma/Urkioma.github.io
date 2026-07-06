@@ -5,67 +5,70 @@ import TechBadge from "../ui/TechBadge.vue";
 const { scramble: scrambleTitle } = useTextScramble("Compétences");
 
 const skillCategories = {
-  frontend: {
-    title: "Frontend",
-    description: "Développement d'interfaces modernes et réactives",
+  system: {
+    title: "Virtualisation & Système",
+    description: "Conception, migration et maintien en condition opérationnelle d'infrastructures",
     color: "lavender",
     items: [
       {
-        title: "Framework & Librairies",
+        title: "Hyperviseurs & Stockage",
         tech: [
-          { name: "Vue.js", color: "lavender", delay: "delay-100" },
-          { name: "TailwindCSS", color: "mint", delay: "delay-200" },
-          { name: "Inertia", color: "rose", delay: "delay-300" },
+          { name: "Proxmox VE", color: "lavender", delay: "delay-100" },
+          { name: "VMware ESXi", color: "mint", delay: "delay-200" },
+          { name: "Ceph", color: "rose", delay: "delay-300" },
         ],
       },
       {
-        title: "Testing Frontend",
+        title: "Systèmes d'exploitation",
         tech: [
-          { name: "Vitest", color: "peach", delay: "delay-100" },
-          { name: "Playwright", color: "mint", delay: "delay-200" },
+          { name: "Debian Linux", color: "peach", delay: "delay-100" },
+          { name: "Windows Server", color: "mint", delay: "delay-200" },
         ],
       },
     ],
   },
-  backend: {
-    title: "Backend",
-    description: "Création d'APIs et gestion de données",
+  devops: {
+    title: "Automatisation & DevOps",
+    description: "Industrialisation des déploiements et gestion du cycle de vie du parc",
     color: "mint",
     items: [
       {
-        title: "Framework & Runtime",
+        title: "Configuration & Orchestration",
         tech: [
-          { name: "AdonisJS", color: "lavender", delay: "delay-100" },
-          { name: "Node.js", color: "mint", delay: "delay-200" },
-          { name: "Laravel", color: "rose", delay: "delay-300" },
+          { name: "Ansible", color: "lavender", delay: "delay-100" },
+          { name: "Ansible Semaphore", color: "mint", delay: "delay-200" },
+          { name: "Cloud-Init", color: "rose", delay: "delay-300" },
         ],
       },
       {
-        title: "Base de données",
+        title: "Scripts & Outils",
         tech: [
-          { name: "MySQL", color: "peach", delay: "delay-100" },
-          { name: "SQLite", color: "mint", delay: "delay-200" },
+          { name: "PowerShell", color: "peach", delay: "delay-100" },
+          { name: "Bash", color: "mint", delay: "delay-200" },
+          { name: "Git", color: "rose", delay: "delay-300" },
         ],
       },
     ],
   },
-  tools: {
-    title: "Environnement",
-    description: "Outils de développement quotidiens",
+  security: {
+    title: "Observabilité & Sécurité",
+    description: "Supervision proactive, centralisation des données et durcissement",
     color: "peach",
     items: [
       {
-        title: "Éditeur & Terminal",
+        title: "Supervision & Logs",
         tech: [
-          { name: "Neovim", color: "lavender", delay: "delay-100" },
-          { name: "Tmux", color: "mint", delay: "delay-200" },
+          { name: "Centreon", color: "lavender", delay: "delay-100" },
+          { name: "Graylog", color: "mint", delay: "delay-200" },
+          { name: "NXLog", color: "rose", delay: "delay-300" },
         ],
       },
       {
-        title: "Versionning & OS",
+        title: "Sécurité & Identités",
         tech: [
-          { name: "Git", color: "rose", delay: "delay-100" },
-          { name: "Linux", color: "peach", delay: "delay-200" },
+          { name: "Wazuh (SIEM)", color: "peach", delay: "delay-100" },
+          { name: "Active Directory", color: "mint", delay: "delay-200" },
+          { name: "ACL NTFS (AGDLP)", color: "rose", delay: "delay-300" },
         ],
       },
     ],
@@ -83,8 +86,8 @@ const skillCategories = {
         Compétences
       </h2>
       <p class="text-xl text-[var(--color-text)]/70 max-w-2xl">
-        Développeur fullstack passionné par les bonnes pratiques et
-        l'apprentissage continu.
+        Administrateur Systèmes et Réseaux spécialisé dans l'automatisation, 
+        la virtualisation haute disponibilité et la sécurisation des infrastructures.
       </p>
     </div>
 
