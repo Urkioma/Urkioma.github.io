@@ -7,12 +7,12 @@ const currentYear = computed(() => new Date().getFullYear());
 const contactLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/MGouillardon",
+    url: "https://github.com/urkioma",
     label: "Voir mon GitHub",
   },
   {
     name: "Email",
-    url: "mailto:maxime.gouillardon@gmail.com",
+    url: "mailto:jeremy_stephan@orange.fr",
     label: "Me contacter",
   },
 ];

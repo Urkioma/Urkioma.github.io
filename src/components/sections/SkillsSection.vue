@@ -21,7 +21,7 @@ const skillCategories = {
       {
         title: "Systèmes d'exploitation",
         tech: [
-          { name: "Debian Linux", color: "peach", delay: "delay-100" },
+          { name: "Linux (Centos/Debian/RHEL/Rocky/Ubuntu)", color: "peach", delay: "delay-100" },
           { name: "Windows Server", color: "mint", delay: "delay-200" },
         ],
       },

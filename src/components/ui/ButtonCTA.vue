@@ -37,7 +37,7 @@ const handleClick = (e) => {
 <template>
   <a
     :href="href"
-    :download="href.endsWith('.pdf') ? 'CV_Maxime_Gouillardon.pdf' : undefined"
+    :download="href.endsWith('.pdf') ? 'CV_STEPHAN_Jeremy.pdf' : undefined"
     :target="
       href.startsWith('http') || href.endsWith('.pdf') ? '_blank' : '_self'
     "
