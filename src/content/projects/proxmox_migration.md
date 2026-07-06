@@ -3,7 +3,7 @@ title: "Cluster Proxmox VE & Ceph"
 order: 1
 description: "Architecture, déploiement et pilotage du Proof of Concept (POC) visant à migrer l'infrastructure virtuelle VMware ESXi vers un cluster hyperconvergé open-source résilient de 3 nœuds."
 shortDescription: "Migration d'infrastructure critique VMware ESXi vers Proxmox VE & Ceph"
-preview: { type: "image", url: "/projects/proxmox-ceph-infra.png" }
+preview: { type: "image", url: "/projects/proxmox_reseau.png" }
 color: "mint"
 tech:
   [
@@ -26,7 +26,7 @@ Dans le cadre d'une stratégie de gestion des risques liée à l'évolution des 
 - **Cluster de 3 nœuds physiques** configuré pour la résilience.
 - **Haute Disponibilité (HA)** native avec gestion fine du quorum.
 - **Cluster Resource Scheduler (CRS)** pour la répartition intelligente des ressources au démarrage et lors des basculements.
-- **Gestion automatisée du split-brain** via les mécanismes de vote natifs du cluster corosync.
+- **Redondance réseau critique** : Mise en place d'une agrégation de liens (Bonding) sur liaisons fibre optique dédiées pour sécuriser les flux de synchronisation du cluster.
 
 ### Stockage Distribué (Ceph)
 
