@@ -4,11 +4,11 @@ order: 4
 description: "Deploiement d'une tour de controle d'infrastructure associant la supervision proactive Centreon (metriques et alertes SMS/Mail), la centralisation Graylog et la cybersecurite active via le SIEM Wazuh."
 shortDescription: "Mise en place d'une infrastructure de supervision, centralisation de logs et SIEM"
 preview: { type: "image", url: "/projects/proxmox_reseau.png" }
-color: "mint"
+color: "rose"
 tech:
   [
-    { name: "Centreon", color: "mint" },
-    { name: "Graylog", color: "rose" },
+    { name: "Centreon", color: "rose" },
+    { name: "Graylog", color: "mint" },
     { name: "Wazuh (SIEM)", color: "lavender" },
   ]
 githubUrl: "https://github.com/urkioma"
