@@ -61,7 +61,7 @@ const techByCategory = computed(() => {
               <h3
                 class="text-sm uppercase tracking-wider text-[var(--color-text)]/50 font-mono"
               >
-                {{ category === 'infrastructure' ? 'Infrastructure & Cloud' : 'Automation & Scripting' }}
+                {{ category === 'infrastructure' ? 'Infrastructure & Systèmes' : 'Automatisation & Scripting' }}
               </h3>
               <div class="flex flex-wrap gap-2 sm:gap-3">
                 <TechBadge

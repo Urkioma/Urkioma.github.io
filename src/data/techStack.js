@@ -1,55 +1,78 @@
 export const techStack = [
+  // --- CATEGORIE : INFRASTRUCTURE ---
   {
-    name: "Vue.js",
+    name: "Proxmox VE",
     color: "lavender",
     delay: "delay-100",
-    category: "frontend",
+    category: "infrastructure",
   },
   {
-    name: "JavaScript",
+    name: "VMware ESXi",
     color: "peach",
     delay: "delay-200",
-    category: "frontend",
+    category: "infrastructure",
   },
   {
-    name: "TailwindCSS",
+    name: "Ceph Storage",
     color: "mint",
     delay: "delay-300",
-    category: "frontend",
+    category: "infrastructure",
   },
   {
-    name: "AdonisJS",
-    color: "lavender",
-    delay: "delay-100",
-    category: "backend",
-  },
-  {
-    name: "Node.js",
-    color: "mint",
-    delay: "delay-200",
-    category: "backend",
-  },
-  {
-    name: "Laravel",
+    name: "Veeam Backup",
     color: "rose",
-    delay: "delay-300",
-    category: "backend",
-  },
-  {
-    name: "PHP",
-    color: "peach",
     delay: "delay-400",
-    category: "backend",
+    category: "infrastructure",
   },
   {
-    name: "InertiaJS",
+    name: "Active Directory",
+    color: "lavender",
+    delay: "delay-500",
+    category: "infrastructure",
+  },
+  {
+    name: "Cisco (CCNA)",
+    color: "mint",
+    delay: "delay-600",
+    category: "infrastructure",
+  },
+
+  // --- CATEGORIE : AUTOMATION ---
+  {
+    name: "Ansible",
     color: "rose",
     delay: "delay-100",
-    category: "backend",
+    category: "automation",
   },
   {
-    name: "Tmux",
+    name: "PowerShell",
+    color: "lavender",
+    delay: "delay-200",
+    category: "automation",
+  },
+  {
+    name: "Centreon",
     color: "peach",
+    delay: "delay-300",
+    category: "automation",
+  },
+  {
+    name: "PostgreSQL",
+    color: "mint",
+    delay: "delay-400",
+    category: "automation",
+  },
+
+  // --- CATEGORIE : TOOLING ---
+  {
+    name: "Linux (Debian/RHEL)",
+    color: "lavender",
+    delay: "delay-100",
+    category: "tooling",
+  },
+  {
+    name: "Docker",
+    color: "mint",
     delay: "delay-200",
     category: "tooling",
   },
@@ -60,15 +83,9 @@ export const techStack = [
     category: "tooling",
   },
   {
-    name: "Linux",
-    color: "lavender",
-    delay: "delay-400",
-    category: "tooling",
-  },
-  {
     name: "Bash",
     color: "peach",
-    delay: "delay-500",
+    delay: "delay-400",
     category: "tooling",
   },
 ];
