@@ -11,7 +11,7 @@ tech:
     { name: "Ceph Storage", color: "mint" },
     { name: "VMware ESXi", color: "peach" },
   ]
-githubUrl: "https://github.com/jeremy-stephan/proxmox-migration-poc"
+githubUrl: "https://github.com/urkioma"
 featured: true
 ---
 
