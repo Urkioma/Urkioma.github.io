@@ -3,7 +3,7 @@ title: "Sauvegarde Resiliente : Veeam, VHLR & Bandes LTO"
 order: 2
 description: "Conception d'une infrastructure de sauvegarde hybride combinant un depot durci Linux (VHLR) pour l'immuabilite a chaud et un lecteur de bande pour l'archivage a froid deconnecte contre les ransomwares."
 shortDescription: "Securisation globale du parc et PRA via Veeam, VHLR et stockage LTO"
-preview: { type: "image", url: "/projects/vhlr.jpg" }
+preview: { type: "image", url: "/projects/veeam.jpg" }
 color: "rose"
 tech:
   [
