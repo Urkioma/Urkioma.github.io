@@ -5,7 +5,8 @@ import ButtonCTA from "../ui/ButtonCTA.vue";
 import { techStack } from "../../data/techStack";
 import { computed } from "vue";
 
-const categories = ["frontend", "backend"];
+// On remplace frontend/backend par tes vraies catégories d'admin sys
+const categories = ["infrastructure", "automation"];
 
 const techByCategory = computed(() => {
   return categories.reduce((acc, category) => {
@@ -31,7 +32,7 @@ const techByCategory = computed(() => {
             <p
               class="animate-fade-in-up text-[var(--color-accent)] font-mono text-lg sm:text-xl delay-100"
             >
-              Administrateur Systemes et Reseaux
+              Administrateur Systèmes et Réseaux
             </p>
           </div>
 
@@ -39,30 +40,28 @@ const techByCategory = computed(() => {
             <h2
               class="animate-fade-in-up delay-200 text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight"
             >
-              Développer avec
-              <span class="text-[var(--color-mint)]">passion</span>
+              Architecturer avec
+              <span class="text-[var(--color-mint)]">résilience</span>
               <span class="text-[var(--color-text)]/70">&</span>
-              <span class="text-[var(--color-peach)]">précision</span>
+              <span class="text-[var(--color-peach)]">sécurité</span>
             </h2>
             <p
               class="animate-fade-in-up delay-300 text-base sm:text-lg lg:text-xl text-[var(--color-text)]/70 max-w-2xl leading-relaxed"
             >
-              Je développe des applications web modernes en mettant l'accent sur
-              la qualité du code et l'expérience utilisateur. Mon approche
-              combine créativité et bonnes pratiques de développement.
+              Spécialisé dans la gestion d'infrastructures critiques, la virtualisation haute disponibilité et l'industrialisation. Je conçois des architectures système et réseau résilientes, automatisées et prêtes pour la production.
             </p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
             <div
-              v-for="category in ['frontend', 'backend']"
+              v-for="category in categories"
               :key="category"
               class="space-y-4"
             >
               <h3
-                class="text-sm uppercase tracking-wider text-[var(--color-text)]/50"
+                class="text-sm uppercase tracking-wider text-[var(--color-text)]/50 font-mono"
               >
-                {{ category }}
+                {{ category === 'infrastructure' ? 'Infrastructure & Cloud' : 'Automation & Scripting' }}
               </h3>
               <div class="flex flex-wrap gap-2 sm:gap-3">
                 <TechBadge
