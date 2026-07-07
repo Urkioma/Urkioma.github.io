@@ -51,29 +51,28 @@ const skillCategories = {
     ],
   },
   security: {
-    title: "Observabilité & Sécurité",
-    description: "Supervision proactive, centralisation des données et durcissement",
+    title: "Gouvernance & Cybersécurité",
+    description: "Durcissement d'infrastructure, détection de menaces et gestion des identités",
     color: "peach",
     items: [
       {
-        title: "Supervision & Logs",
+        title: "Sécurité Defensive & SIEM",
         tech: [
-          { name: "Centreon", color: "lavender", delay: "delay-100" },
-          { name: "Graylog", color: "mint", delay: "delay-200" },
-          { name: "NXLog", color: "rose", delay: "delay-300" },
+          { name: "Wazuh (SIEM)", color: "peach", delay: "delay-100" },
+          { name: "Centralisation de Logs", color: "mint", delay: "delay-200" },
+          { name: "Durcissement (Hardening)", color: "rose", delay: "delay-300" },
         ],
       },
       {
-        title: "Sécurité & Identités",
+        title: "Gouvernance & Droits",
         tech: [
-          { name: "Wazuh (SIEM)", color: "peach", delay: "delay-100" },
+          { name: "Moindre Privilège", color: "lavender", delay: "delay-100" },
           { name: "Active Directory", color: "mint", delay: "delay-200" },
-          { name: "ACL NTFS (AGDLP)", color: "rose", delay: "delay-300" },
+          { name: "Sécurisation NTFS", color: "rose", delay: "delay-300" },
         ],
       },
     ],
   },
-};
 </script>
 
 <template>
