@@ -73,6 +73,7 @@ const skillCategories = {
       },
     ],
   },
+  
 </script>
 
 <template>
