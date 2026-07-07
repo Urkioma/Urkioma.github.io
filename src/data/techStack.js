@@ -13,12 +13,6 @@ export const techStack = [
     category: "infrastructure",
   },
   {
-    name: "Ceph Storage",
-    color: "mint",
-    delay: "delay-300",
-    category: "infrastructure",
-  },
-  {
     name: "Veeam Backup",
     color: "rose",
     delay: "delay-400",
@@ -55,13 +49,7 @@ export const techStack = [
     color: "peach",
     delay: "delay-300",
     category: "automation",
-  },
-  {
-    name: "PostgreSQL",
-    color: "mint",
-    delay: "delay-400",
-    category: "automation",
-  },
+  }
 
   // --- CATEGORIE : TOOLING ---
   {
