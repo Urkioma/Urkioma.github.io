@@ -49,7 +49,7 @@ export const techStack = [
     color: "peach",
     delay: "delay-300",
     category: "automation",
-  }
+  },
 
   // --- CATEGORIE : TOOLING ---
   {
