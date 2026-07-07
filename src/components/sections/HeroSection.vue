@@ -48,7 +48,7 @@ const techByCategory = computed(() => {
             <p
               class="animate-fade-in-up delay-300 text-base sm:text-lg lg:text-xl text-[var(--color-text)]/70 max-w-2xl leading-relaxed"
             >
-              Spécialisé dans la gestion d'infrastructures critiques, la virtualisation haute disponibilité et l'industrialisation. Je conçois des architectures système et réseau résilientes, automatisées et prêtes pour la production.
+              Spécialisé dans la gestion d'infrastructures critiques, la virtualisation haute disponibilité, l'industrialisation et la sécurité. Je conçois des architectures système et réseau résilientes, automatisées et prêtes pour la production.
             </p>
           </div>
 
