@@ -73,7 +73,7 @@ const skillCategories = {
       },
     ],
   }
-
+};
 </script>
 
 <template>
@@ -87,7 +87,7 @@ const skillCategories = {
       </h2>
       <p class="text-xl text-[var(--color-text)]/70 max-w-2xl">
         Administrateur Systèmes et Réseaux spécialisé dans l'automatisation, 
-        la virtualisation haute disponibilité et la sécurisation des infrastructures.
+        la virtualisation haute disposition et la sécurisation des infrastructures.
       </p>
     </div>
 
