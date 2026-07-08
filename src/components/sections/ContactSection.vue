@@ -31,8 +31,7 @@ const contactLinks = [
             Intéressé par mon profil ?
           </h2>
           <p class="text-xl text-[var(--color-text)]/70 max-w-2xl mx-auto">
-            N'hésitez pas à me contacter pour échanger sur vos opportunités de
-            développeur fullstack.
+            N'hésitez pas à me contacter pour échanger sur vos opportunités d'administrateur systèmes et réseaux.
           </p>
         </div>
 
