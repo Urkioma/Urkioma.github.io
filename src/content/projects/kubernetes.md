@@ -1,5 +1,5 @@
 ---
-title: "POC Migration Infra : Rationalisation des Coûts Veeam via Cluster Kubernetes HA & CI/CD (Air-Gap)"
+title: "Consolidation Kubernetes HA & CI/CD Air-Gapped"
 order: 5
 description: "Étude de faisabilité et déploiement d'un POC Kubernetes (K3s HA) visant à migrer ~30 VM Web/BDD pour optimiser les coûts de licences de sauvegarde Veeam, couplé à une chaîne CI/CD Gitea & Nexus en réseau restreint."
 shortDescription: "POC de consolidation de 30 VM applicatives vers Kubernetes HA pour réduire les coûts de licensing Veeam"
