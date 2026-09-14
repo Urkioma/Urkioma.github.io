@@ -1,12 +1,13 @@
 ---
-title: "Industrialisation & Deploiement de Masse : Ansible & Semaphore"
+title: "Industrialisation & Déploiement de Masse : Terraform, Ansible & Semaphore"
 order: 3
-description: "Automatisation complete du cycle de vie de 128 instances Windows de formation sur cluster Proxmox VE, orchestree via Ansible Semaphore et supervisee par Graylog."
-shortDescription: "Orchestration et industrialisation de 128 instances de formation via Ansible et Semaphore"
+description: "Automatisation complète du cycle de vie de 128 instances Windows de formation sur cluster Proxmox VE, provisionnées par Terraform, orchestrées via Ansible Semaphore et supervisées par Graylog."
+shortDescription: "Provisioning Terraform et orchestration Ansible/Semaphore pour 128 instances de formation sur Proxmox"
 preview: { type: "image", url: "/projects/ansible_bg.png" }
 color: "lavender"
 tech:
   [
+    { name: "Terraform", color: "peach" },
     { name: "Ansible", color: "lavender" },
     { name: "Proxmox VE", color: "mint" },
     { name: "Graylog / NXLog", color: "rose" },
@@ -21,11 +22,16 @@ Pour répondre aux besoins de formation des greffiers sur les applications judic
 
 ## Architecture & Technologies
 
-### Commutation Virtuelle & Automatisation (Ansible)
+### Infrastructure as Code & Provisionnement (Terraform & Proxmox)
 
-- **Cycle de vie automatisé** : Développement de playbooks Ansible permettant le provisionnement (clonage lié), la jonction au domaine Active Directory, la maintenance et le nettoyage complet des VM.
-- **Répartition intelligente de charge** : Algorithme Ansible dynamique distribuant cycliquement les 128 instances sur les 3 nœuds physiques du cluster pour équilibrer les ressources CPU/RAM.
-- **Haute Disponibilité à chaud** : Injection automatisée de directives d'activation de la Haute Disponibilité (HA) via l'API Proxmox à la création de chaque instance.
+- **Provisionnement déclaratif** : Utilisation du provider Terraform `bpg/proxmox` pour déclarer et instancier les 128 machines virtuelles de manière reproductible et maintenable.
+- **Répartition & HA à la création** : Distribution dynamique des instances sur les différents nœuds du cluster Proxmox avec activation automatique de la Haute Disponibilité (HA) lors du déploiement.
+- **Gestion fine de l'état (State)** : Découpage et contrôle du parallélisme (`-parallelism`) pour optimiser les appels d'API Proxmox et éviter la saturation du cluster lors des créations de masse.
+
+### Configuration & Jonction de Domaine (Ansible)
+
+- **Cycle de vie applicatif** : Playbooks Ansible déclenchés post-provisionnement pour la jonction au domaine Active Directory, le durcissement du système et le déploiement des logiciels métiers.
+- **Déploiement hybride** : Modèle combinant IaC (Terraform crée les ressources et l'infrastructure) et Configuration Management (Ansible prépare l'environnement utilisateur).
 
 ### Conception du Master & Provisionnement (Cloudbase-Init)
 
@@ -39,17 +45,17 @@ Pour répondre aux besoins de formation des greffiers sur les applications judic
 
 ### Interface d'Orchestration (Ansible Semaphore)
 
-- **Simplification du processus** : Déploiement de l'application web Ansible Semaphore pour encapsuler la complexité technique des playbooks derrière une interface graphique épurée.
-- **Autonomie opérationnelle** : Permet de déclencher en un clic les campagnes de déploiement ou de suppression globale des 128 machines virtuelles sans nécessiter d'accès en ligne de commande au serveur Ansible.
+- **Simplification du processus** : Déploiement de l'application web Ansible Semaphore pour encapsuler l'exécution des plans Terraform et des playbooks Ansible derrière une interface graphique épurée.
+- **Autonomie opérationnelle** : Permet de déclencher en un clic les campagnes de déploiement ou de suppression globale des 128 machines virtuelles sans nécessiter d'accès en ligne de commande au serveur d'administration.
 
 ## Fonctionnalités Clés
 
 ### Robustesse & Performance de Masse
 
-- Exécution parallélisée par vagues et gestion des goulots d'étranglement de l'API pour garantir un déploiement fluide de l'ensemble du parc sans saturer les volumes de stockage.
-- Mécanismes de résilience intégrés avec retentatives automatiques en cas de timeout réseau ou de latence du protocole WinRM lors de l'initialisation des hôtes Windows.
+- **Exécution parallélisée maîtrisée** : Tuning fin des timeouts API et du parallélisme Terraform/Ansible par vagues pour garantir un déploiement fluide de l'ensemble du parc sans saturer les I/O du stockage Ceph/Local.
+- **Mécanismes de résilience** : Gestion de la latence du boot Windows, de l'agent QEMU et du protocole WinRM lors de l'initialisation des hôtes avec mécanismes de retentatives automatiques.
 
 ### Gestion Épurée du Cycle de Vie
 
-- Scripts de nettoyage intégrés s'exécutant automatiquement à la connexion pour forcer la limitation à une seule session active par instance.
-- Procédure de nettoyage de masse automatisée retirant proprement les VM du domaine de l'administration centrale avant d'initier leur suppression physique du cluster.
+- **Limitation de session** : Scripts de nettoyage intégrés s'exécutant automatiquement à la connexion pour forcer la limitation à une seule session active par instance.
+- **Destruction propre de masse** : Séquence automatisée retirant proprement les VM du domaine Active Directory avant la destruction physique des ressources par Terraform (`terraform destroy`).

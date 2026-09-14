@@ -1,6 +1,6 @@
 ---
 title: "Supervision Globale & SIEM : Centreon, Graylog & Wazuh"
-order: 4
+order: 5
 description: "Deploiement d'une tour de controle d'infrastructure associant la supervision proactive Centreon (metriques et alertes SMS/Mail), la centralisation Graylog et la cybersecurite active via le SIEM Wazuh."
 shortDescription: "Mise en place d'une infrastructure de supervision, centralisation de logs et SIEM"
 preview:
