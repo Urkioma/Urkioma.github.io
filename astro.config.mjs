@@ -8,6 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://mgouillardon.github.io",
+  site: "https://urkioma.github.io",
   output: "static",
 });
