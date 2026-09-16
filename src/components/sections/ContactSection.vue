@@ -47,7 +47,7 @@ const contactLinks = [
           />
 
           <ButtonCTA
-            href="/CV_Stephan_Jeremy.pdf"
+            href="/CV.pdf"
             label="Télécharger mon CV"
             variant="solid"
           />
